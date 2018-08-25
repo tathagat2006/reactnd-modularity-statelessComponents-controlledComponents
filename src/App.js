@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import CreateNewItem from './CreateNewItem'
+import Item from './Item'
 
 class App extends React.Component {
   state = {
@@ -29,6 +30,7 @@ class App extends React.Component {
         </header>
         <h2>Shopping List</h2>
     	<CreateNewItem OnAddItem = {this.handleAddItem}/>
+		<Item items = {this.state.items}/>
       </div>
     );
   }

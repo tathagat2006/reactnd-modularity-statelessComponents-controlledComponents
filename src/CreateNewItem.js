@@ -6,19 +6,19 @@ state = {
 	value:''
 }
 
-handleChange = (event) => {
-	this.setState(() => {
+handleChange = event => {
+	this.setState({
     value:event.target.value
     })
 }
 
-Additem = event => {
-	event.preventdefault();
+AddItem = event => {
+	event.preventDefault();
   this.props.OnAddItem(this.state.value)
 }
 
-noitemFound = () => {
-	return this.state.value === ''
+inputIsEmpty = () => {
+	return this.state.value === '';
 }
 
 render(){
@@ -31,7 +31,7 @@ render(){
 	value = {this.state.value}
 	onChange = {this.handleChange} 
 />
-<button disabled = {this.noitemFound()}>ADD</button>
+<button disabled = {this.inputIsEmpty()}>ADD</button>
   </form>
   </div>
 )
